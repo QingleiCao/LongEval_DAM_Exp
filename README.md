@@ -74,6 +74,7 @@ for model_name in "${model_names[@]}"; do
         python longeval/eval.py \
             --model-name-or-path "model/$model_name" \
             --count "$ite" \
+            --test_dir "longeval/evaluation" \
             --task lines \
             --max_gpu_memory 80 \
             --num_gpus 2 &
@@ -88,6 +89,7 @@ Test with only one model one iteration:
 python longeval/eval.py \
     --model-name-or-path "model/HanzhiZhang_DAM_0.99" \
     --count "1" \
+    --test_dir "longeval/evaluation" \
     --task lines \
     --max_gpu_memory 80 \
     --num_gpus 2 &
